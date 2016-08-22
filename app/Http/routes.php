@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','CustomAuthController@index');
+Route::get('logout','CustomAuthController@logout');
+
+Route::get('dashboard','DashboardController@index');
+Route::get('parsha/{id?}','ParshaController@detail');
+Route::get('section','SectionController@index');
+
+Route::post('authenticate','CustomAuthController@authenticate');
+

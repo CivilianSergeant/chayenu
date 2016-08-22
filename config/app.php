@@ -211,4 +211,9 @@ return [
 
     ],
 
+    'credentials' => [
+        'user' => 'root@email.com',
+        'pass' => '1234'
+    ],
+
 ];
