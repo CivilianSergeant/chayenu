@@ -15,6 +15,8 @@ Route::get('/','CustomAuthController@index');
 Route::get('logout','CustomAuthController@logout');
 
 Route::get('dashboard','DashboardController@index');
+Route::get('parsha/new','ParshaController@index');
+Route::post('parsha/create','ParshaController@create');
 Route::get('parsha/{id?}','ParshaController@detail');
 Route::get('section','SectionController@index');
 

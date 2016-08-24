@@ -27,6 +27,7 @@
     <!-- Bootstrap core CSS -->
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     <script  type="text/JavaScript"  src="https://code.jquery.com/jquery-1.12.4.min.js"   ></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 

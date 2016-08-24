@@ -68,11 +68,11 @@
 
 
 
-    <div class="container">
+    <div class="container center">
 
 
 
-      <form class="form-signin" action="{{url('authenticate')}}" method="post">
+      <form class="form-signin col-md-5 col-md-offset-3" action="{{url('authenticate')}}" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
         <h2 class="form-signin-heading">Chayenu Uploading</h2>
 
@@ -88,22 +88,25 @@
 
           <label>
 
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" name="remember" value="remember-me"> Remember me
 
           </label>
 
         </div>
 
         <button  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <br/>
+          @if(Session::has('message'))
 
+              <div class="alert alert-warning">
+                  <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+                  <strong>Opps!</strong> {{Session::get('message')}}
+              </div>
+
+          @endif
       </form>
       <br/>
-      @if(Session::has('message'))
-      <div class="alert alert-warning">
-        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
-        <strong>Opps!</strong> {{Session::get('message')}}
-      </div>
-      @endif
+
 
     </div> <!-- /container -->
 

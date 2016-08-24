@@ -22,7 +22,7 @@
     <select id="parshaList" style="padding:10px;">
       <option value="">Please Select</option>
       @foreach($parshas as $parsha)
-      <option value="{{$parsha->id}}">{{$parsha->text_eng.' '.$parsha->id}}</option>
+      <option value="{{$parsha->id}}">{{$parsha->week_name.' '.$parsha->id}}</option>
       @endforeach
    </select>
 
@@ -32,7 +32,7 @@
 
 
 
-  <button class="btn btn-info btn-lg" type="button">Add Parsha</button>
+  <a href="{{url('parsha/new')}}" class="btn btn-info btn-lg" >Add Parsha</a>
 
 
 

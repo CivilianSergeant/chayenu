@@ -14,7 +14,7 @@ class DashboardController extends Controller
 	
 	public function index(Request $request)
 	{
-		if(!$request->session()->has('user')){
+		if(!$request->session()->has('user') && !$request->cookie('user')){
 			return redirect('/');
 		}
 
