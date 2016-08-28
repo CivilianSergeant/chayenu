@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98603819-6360-41a4-ac2d-0ef9fbcb3477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/parsha/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Entities/Section.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Entities/Text.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/TextController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/parsha/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/section/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/parsha/list.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/section/list.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Parsha.php" afterPath="$PROJECT_DIR$/app/Entities/Parsha.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ParshaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParshaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/authenticate/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/authenticate/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/parsha/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/parsha/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/section/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/section/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/session.php" afterPath="$PROJECT_DIR$/config/session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chayenu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,91 +42,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CustomAuthController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php">
+      <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/section/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-32.903225" vertical-offset="36" max-vertical-offset="1276">
+            <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="-7.806452" vertical-offset="132" max-vertical-offset="2068">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParshaController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="detail.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/parsha/detail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="288" column="0" selection-start="11445" selection-end="11445" vertical-scroll-proportion="-9.806452" vertical-offset="6032" max-vertical-offset="7524">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParshaController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="31" selection-start="584" selection-end="584" vertical-scroll-proportion="-16.612904" vertical-offset="35" max-vertical-offset="726">
+            <state line="122" column="37" selection-start="3966" selection-end="3966" vertical-scroll-proportion="0.1941392" vertical-offset="2578" max-vertical-offset="3190">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
+      <file leaf-file-name="Text.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Entities/Text.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.36263737" vertical-offset="66" max-vertical-offset="1320">
+            <state line="7" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="-4.967742" vertical-offset="0" max-vertical-offset="440">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <file leaf-file-name="SectionController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SectionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176">
+            <state line="32" column="25" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2420">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <file leaf-file-name="session.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/session.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="4" selection-start="608" selection-end="608" vertical-scroll-proportion="-3.548387" vertical-offset="528" max-vertical-offset="3564">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="-7.096774" vertical-offset="132" max-vertical-offset="726">
+            <state line="31" column="20" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="682" max-vertical-offset="3784">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/dashboard/index.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/section/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="28" selection-start="655" selection-end="655" vertical-scroll-proportion="-9.225806" vertical-offset="462" max-vertical-offset="1276">
+            <state line="22" column="0" selection-start="0" selection-end="1216" vertical-scroll-proportion="-9.225806" vertical-offset="198" max-vertical-offset="1056">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/section/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="55" selection-start="652" selection-end="652" vertical-scroll-proportion="-12.774194" vertical-offset="0" max-vertical-offset="660">
+            <state line="26" column="65" selection-start="760" selection-end="760" vertical-scroll-proportion="-8.387096" vertical-offset="312" max-vertical-offset="1078">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
+      <file leaf-file-name="TextController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TextController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="26.709677" vertical-offset="828" max-vertical-offset="1408">
+            <state line="44" column="48" selection-start="1387" selection-end="1387" vertical-scroll-proportion="-11.645162" vertical-offset="607" max-vertical-offset="1166">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/authenticate/index.blade.php">
+      <file leaf-file-name="Section.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Entities/Section.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="-9.064516" vertical-offset="1501" max-vertical-offset="2860">
+            <state line="17" column="81" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="528">
               <folding />
             </state>
           </provider>
@@ -138,17 +146,28 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/config/session.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/views/authenticate/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/parsha/indexl.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ParshaController.php" />
         <option value="$PROJECT_DIR$/public/css/custom.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Parsha.php" />
         <option value="$PROJECT_DIR$/resources/views/parsha/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/parsha/list.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/parsha/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Section.php" />
+        <option value="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" />
+        <option value="$PROJECT_DIR$/config/session.php" />
+        <option value="$PROJECT_DIR$/resources/views/section/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/section/list.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/section/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Text.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ParshaController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TextController.php" />
+        <option value="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" />
       </list>
     </option>
   </component>
@@ -185,6 +204,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -218,6 +238,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="section" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,6 +393,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jquery-ui-1.12.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -423,9 +505,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chayenu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -436,6 +535,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
+    <property name="SearchEverywhereHistory" value="d" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -469,7 +570,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -508,11 +609,112 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1276">
+        <state line="9" column="22" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1452" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="2173" selection-end="2332" vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="1496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Parsha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="4" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="3630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="726" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="28" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="55" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/authenticate/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="2860" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="31" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="1320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="4" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="3564" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="28" selection-start="655" selection-end="655" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="55" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/authenticate/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="2860" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1276" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
@@ -524,140 +726,174 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="19" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="3784">
-          <folding />
-        </state>
+        <state line="31" column="19" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="3784" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726">
-          <folding />
-        </state>
+        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="2772">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="2772" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="726">
-          <folding />
-        </state>
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="726" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1408">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1408" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/authenticate/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0" vertical-offset="1633" max-vertical-offset="2860">
-          <folding />
-        </state>
+        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0" vertical-offset="1633" max-vertical-offset="2860" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="2772">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="2772" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="726">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="19" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="3784">
-          <folding />
-        </state>
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="726" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomAuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-32.903225" vertical-offset="36" max-vertical-offset="1276">
-          <folding />
-        </state>
+        <state line="48" column="5" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1276" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/authenticate/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="-9.064516" vertical-offset="1501" max-vertical-offset="2860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/parsha/detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="577">
-          <folding />
-        </state>
+        <state line="81" column="0" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0" vertical-offset="1501" max-vertical-offset="2860" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="26.709677" vertical-offset="828" max-vertical-offset="1408">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1408" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="-7.096774" vertical-offset="132" max-vertical-offset="726">
-          <folding />
-        </state>
+        <state line="16" column="47" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="726" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="4" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0" vertical-offset="858" max-vertical-offset="3630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="14" selection-start="552" selection-end="767" vertical-scroll-proportion="-6.2580647" vertical-offset="356" max-vertical-offset="1496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="60" selection-start="591" selection-end="591" vertical-scroll-proportion="0.64468867" vertical-offset="0" max-vertical-offset="1034" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dashboard/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="28" selection-start="655" selection-end="655" vertical-scroll-proportion="-9.225806" vertical-offset="462" max-vertical-offset="1276">
+        <state line="16" column="22" selection-start="338" selection-end="357" vertical-scroll-proportion="-7.096774" vertical-offset="132" max-vertical-offset="1408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="20" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="682" max-vertical-offset="3784">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="10" selection-start="587" selection-end="754" vertical-scroll-proportion="-11.354838" vertical-offset="176" max-vertical-offset="1562" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Section.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="81" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="528">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Parsha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SectionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="25" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/section/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="65" selection-start="760" selection-end="760" vertical-scroll-proportion="-8.387096" vertical-offset="312" max-vertical-offset="1078">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="55" selection-start="652" selection-end="652" vertical-scroll-proportion="-12.774194" vertical-offset="0" max-vertical-offset="660">
+        <state line="34" column="29" selection-start="1372" selection-end="1372" vertical-scroll-proportion="0.6618962" vertical-offset="378" max-vertical-offset="1034">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/section/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="0" selection-end="1216" vertical-scroll-proportion="-9.225806" vertical-offset="198" max-vertical-offset="1056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/section/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="-7.806452" vertical-offset="132" max-vertical-offset="2068">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="-4.967742" vertical-offset="0" max-vertical-offset="440">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TextController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="48" selection-start="1387" selection-end="1387" vertical-scroll-proportion="-11.645162" vertical-offset="607" max-vertical-offset="1166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/parsha/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="288" column="0" selection-start="11445" selection-end="11445" vertical-scroll-proportion="-9.806452" vertical-offset="6032" max-vertical-offset="7524">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="31" selection-start="584" selection-end="584" vertical-scroll-proportion="-16.612904" vertical-offset="35" max-vertical-offset="726">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="4" selection-start="608" selection-end="608" vertical-scroll-proportion="-3.548387" vertical-offset="528" max-vertical-offset="3564">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="461" selection-end="461" vertical-scroll-proportion="0.36263737" vertical-offset="66" max-vertical-offset="1320">
+        <state line="122" column="37" selection-start="3966" selection-end="3966" vertical-scroll-proportion="0.1941392" vertical-offset="2578" max-vertical-offset="3190">
           <folding />
         </state>
       </provider>

@@ -6,7 +6,7 @@
   <li class="active"><a href="{{url('dashboard')}}">Select Parsha</a></li>
 
   <li>
-    <a href="{{url('section')}}"><span class="glyphicon glyphicon-th-list"></span> Sections</a>
+    <a href="{{url('section/lists')}}"><span class="glyphicon glyphicon-th-list"></span> Sections</a>
   </li>
 
 </ul>
@@ -14,7 +14,13 @@
 
 @section('main-content')
 <div class="jumbotron">
-
+    @if($errors->any())
+    <ul class="alert alert-danger">
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+    @endif
     <h2>Select Parsha</h2>
 
 
@@ -22,7 +28,7 @@
     <select id="parshaList" style="padding:10px;">
       <option value="">Please Select</option>
       @foreach($parshas as $parsha)
-      <option value="{{$parsha->id}}">{{$parsha->week_name.' '.$parsha->id}}</option>
+      <option value="{{$parsha->id}}">{{$parsha->parsha_name.' '.$parsha->id}}</option>
       @endforeach
    </select>
 
@@ -45,7 +51,7 @@
     $("#parshaList").change(function(){
         var id = $(this).val();
         if(id!=null)
-          window.location = "{{url('parsha')}}/"+id;
+          window.location = "{{url('text')}}/"+id;
     });
 
   });

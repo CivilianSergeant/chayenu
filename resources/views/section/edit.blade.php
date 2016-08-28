@@ -21,13 +21,14 @@
     </ul>
     @endif
 
-    <h3>Add Section</h3>
-    <form class="form-horizontal" action="{{url('section/create')}}" method="post">
+    <h3>Edit Section</h3>
+    <form class="form-horizontal" action="{{url('section/update')}}" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="id" value="{{$section->id}}"/>
         <div class="form-group">
             <label class="control-label col-md-3">Section Title</label>
             <div class="col-md-3">
-                <input type="text" name="title" class="form-control"/>
+                <input type="text" name="title" class="form-control" value="{{$section->title}}"/>
             </div>
         </div>
         <div class="form-group">

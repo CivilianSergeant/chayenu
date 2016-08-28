@@ -27,8 +27,11 @@
     <!-- Bootstrap core CSS -->
 
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/jquery-ui-1.12.0/jquery-ui.min.css')}}" rel="stylesheet">
+    <link href="{{asset('js/jquery-ui-1.12.0/jquery-ui.theme.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/custom.css')}}" rel="stylesheet">
     <script  type="text/JavaScript"  src="https://code.jquery.com/jquery-1.12.4.min.js"   ></script>
+    <script  type="text/JavaScript"  src="{{asset('js/jquery-ui-1.12.0/jquery-ui.min.js')}}"   ></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
 

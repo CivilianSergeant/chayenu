@@ -15,10 +15,27 @@ Route::get('/','CustomAuthController@index');
 Route::get('logout','CustomAuthController@logout');
 
 Route::get('dashboard','DashboardController@index');
+
+Route::get('parsha/lists','ParshaController@show');
 Route::get('parsha/new','ParshaController@index');
+Route::get('parsha/edit/{id}','ParshaController@edit');
+Route::get('parsha/delete/{id}','ParshaController@delete');
 Route::post('parsha/create','ParshaController@create');
-Route::get('parsha/{id?}','ParshaController@detail');
-Route::get('section','SectionController@index');
+Route::post('parsha/update','ParshaController@update');
+
+Route::get('section/lists','SectionController@show');
+Route::get('section/new','SectionController@index');
+Route::get('section/edit/{id}','SectionController@edit');
+Route::get('section/delete/{id}','SectionController@delete');
+Route::post('section/create','SectionController@create');
+Route::post('section/update','SectionController@update');
+Route::post('section/update-order','SectionController@updateOrder');
+
+Route::get('text/{id}','ParshaController@detail');
+Route::post('text/save','TextController@save');
+
+Route::post('ajax-get-days','ParshaController@getDays');
+Route::post('ajax-get-texts','ParshaController@getTexts');
 
 Route::post('authenticate','CustomAuthController@authenticate');
 
