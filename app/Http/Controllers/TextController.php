@@ -17,6 +17,8 @@ class TextController extends Controller{
     public function save(Request $request)
     {
         $all = $request->all();
+
+        dd($all);
         $section = $all['section'];
         $day_num = $all['day_num'];
         $englishOnlyStart = $all['englishOnlyStart'];

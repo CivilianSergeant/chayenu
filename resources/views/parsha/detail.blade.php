@@ -22,7 +22,7 @@
 <div class="alert alert-success">{{Session::get('success')}}</div>
 @endif
     <div class="col-md-12 jumbotron">
-        <form class="form-horizontal" action="{{url('text/save')}}" method="post">
+        <form id="textSubmit" class="form-horizontal" action="{{url('text/save')}}" method="post">
         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             <input type="hidden" name="parsha_id" value="{{$parsha->id}}"/>
         <h3>Add/Edit text for {{$parsha->parsha_name}} {{$parsha->id}}</h3>
@@ -47,22 +47,10 @@
                 </select>
             </div>
         </div>
+
             <p><input type="checkbox" id="sync_all"> <label for="sync_all">Sync all rows in this section/day</label></p>
-            <h3><span>English Only Section</span> (<input type="checkbox" class="sync" name="sync_both" id="sync1">
-                <label for="sync1">Sync</label>)
-                <button id="deleteBoth" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-            </h3>
-            <div id="englishOnly" class="tanya_textarea" >
+            <div id="englishOnly">
 
-                <!--<h3 style="text-align:center;">Overview of Chapter 7</h3>
-                <p style="font-style:italic;"></p>A true path of Teshuvah requires these two processes: (1) arousing mercy on one’s soul’s descent – and thereby, the Shechinah’s too; (2) crushing the arrogant spirit. The latter is achieved by an honest and thorough reflection and accounting of one’s wrongdoings.</p>
-
-                <h1 style="text-align:center">פֶּרֶק ז</h1>
-                <h2 style="text-align:center;">CHAPTER SEVEN</h2>
-
-                    <p>The Flow: In the language of the Zohar, the lower level of repentance entails returning the latter hey of the Four-Letter Name of G-d to its rightful place—returning the Shechinah, which is the source of Jewish souls, from the exile to which it was banished by transgression. For when a man sins, the Divine vitality that flows forth from the Shechinah descends into the chambers of kelipah and sitra achara, and from there, that individual in turn derives nurture at the time of his sins. Repentance redeems the Shechinah from its exile and returns the flow to its proper place.</p>
-
-                    <p>This was the theme of the previous chapter.</p>-->
 
             </div>
             <input type="hidden" name="englishOnlyStart" value="0"/>
@@ -114,17 +102,7 @@
 <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
 <script>
 
-    tinymce.init({
-        mode:"none",
-        menubar: false,
 
-        plugins: "code",
-
-        toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
-
-        selector:'#englishOnly'
-
-    });
 
     tinymce.init({
         mode:"none",
@@ -156,6 +134,8 @@
 </script>
 <script type="text/javascript">
     var days = null;
+    var deleteItemArr = [];
+    var sync = [];
 
     var getDays = function(id){
         var token = "{{csrf_token()}}";
@@ -195,15 +175,17 @@
     $("#selectDay").change(function(){
         var obj = $(this);
         var token = "{{csrf_token()}}";
+
+
         $.ajax({
            url:"{{url('ajax-get-texts')}}",
            type:"POST",
            data:{_token:token,day_num:obj.val(),section_id:$("#selectSection").val()},
            beforeSend:function(){
-               $("#englishOnly").html('');
+               $("#englishOnlySection").html('');
                $("#hebText").html('');
                $("#engText").html('');
-               /*tinymce.execCommand('mceRemoveEditor',true,'.tanya_textarea');*/
+
            },
            success:function(e){
 
@@ -223,6 +205,7 @@
                var hebSyncCount = 0;
                var bothTotal = 0;
                var bothSyncCount = 0;
+               var englishOnlyHeader = '';
                for(tb in text_both){
 
                    var t = text_both[tb].text_both.trim();
@@ -236,12 +219,18 @@
                        }else{
                            startBoth += "," + text_both[tb].id;
                        }
+                       englishOnlyHeader = '<h3><span>English Only Section</span> (<input type="checkbox" class="sync" name="sync_both['+text_both[tb].id+']" value="'+text_both[tb].id+'" />'+
+                           '<label for="sync1">Sync</label>) '+
+                           '<button name="deleteBoth" data-id="'+text_both[tb].id+'" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button>'+
+                           '</h3>';
+                       htmlTxtBothContent+= englishOnlyHeader+'<textarea name="englishOnly['+text_both[tb].id+']" class="col-md-12">'+t+'</textarea><br/>';
 
-                       htmlTxtBothContent+='<p>'+t+'</p>';
 
                    }
 
                }
+
+
 
                for(te in text_eng){
                    var t = text_eng[te].text_eng.trim();
@@ -273,7 +262,7 @@
                    }
                }
 
-               if(hebTotal == hebSyncCount){
+               /*if(hebTotal == hebSyncCount){
                    $("#sync1").prop('checked','checked');
                    $("#sync1").next().addClass('text-success');
                }
@@ -285,20 +274,34 @@
 
                if($("#sync1").prop('checked') && $("#sync2").prop('checked')){
                    $("#sync_all").prop('checked','checked');
-               }
+               }*/
+
 
                $("#englishOnly").html(htmlTxtBothContent);
-               $("input[name=englishOnlyStart]").val(startBoth);
 
-               $("#hebText").html(htmlTxtHeb);
+
+
+
+              /* $("#hebText").html(htmlTxtHeb);
                $("input[name=hebStart]").val(startHeb);
 
                $("#engText").html(htmlTxtEng);
-               $("input[name=engStart]").val(startEng);
+               $("input[name=engStart]").val(startEng);*/
 
-                tinymce.get('englishOnly').setContent(htmlTxtBothContent);
+               tinymce.init({
+                   mode:"none",
+                   menubar: false,
+
+                   plugins: "code",
+
+                   toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+
+                   selector:'textarea'
+
+               });
+                /*tinymce.get('englishOnly').setContent(htmlTxtBothContent);
                 tinymce.get('hebText').setContent(htmlTxtHeb);
-                tinymce.get('engText').setContent(htmlTxtEng);
+                tinymce.get('engText').setContent(htmlTxtEng);*/
 
 
            }
@@ -311,10 +314,31 @@
         if(obj.prop('checked')){
             $(".sync").prop('checked','checked');
             $(".sync").next().addClass('text-success');
+            $("input.sync").each(function(i,el){
+                var obj = $(this);
+                if(obj.prop('checked')){
+                    sync.push(obj.val());
+                }
+            });
 
         }else{
             $(".sync").removeAttr('checked');
             $(".sync").next().removeClass('text-success');
+            sync = [];
+        }
+    });
+
+    $(document).on('change','input.sync',function(){
+       var obj = $(this);
+        if(obj.prop('checked')){
+            obj.next().addClass('text-success');
+            sync.push(obj.val())
+        }else{
+            var index = sync.indexOf(obj.val());
+            if(index != -1){
+                sync.splice(index,1);
+            }
+            obj.next().removeClass('text-success');
         }
     });
 
@@ -324,10 +348,27 @@
         obj.parent().find('span').addClass('strike_through');
     });
 
-    $("#deleteBoth").click(function(){
+    $(document).on('click','button[name=deleteBoth]',function(){
         var obj = $(this);
-
+        deleteItemArr.push(obj.attr('data-id'));
         obj.parent().find('span').addClass('strike_through');
+    });
+
+    $("#textSubmit").submit(function(){
+
+        /*$("input.sync").each(function(i,el){
+            var obj = $(this);
+            if(obj.prop('checked')){
+                sync.push(obj.val());
+            }
+        });*/
+        var formData = {
+          deletedItems:deleteItemArr,
+          sync:sync
+        };
+
+        console.log(formData)
+        return false;
     });
 
 
