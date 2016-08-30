@@ -57,22 +57,11 @@
 
             <hr>
 
-            <h3><span>Hebrew/English Section</span> (<input type="checkbox" class="sync" name="sync_ind" id="sync2"> <label for="sync2">Sync</label>)
-                <button id="deleteHebEng" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button></h3>
+            <div id="hebEng">
 
-            <p>Hebrew:</p>
-
-            <div id="hebText" class="tanya_textarea">
-                <!--<span dir="rtl" style="text-align:right;float:right;font-size:20px;">ְאוּלָם, דֶּרֶךְ הָאֱמֶת וְהַיָּשָׁר לִבְחִינַת תְּשׁוּבָה תַּתָּאָה, הֵ"א תַּתָּאָה הַנִּזְכֶּרֶת לְעֵיל – הֵם ב' דְּבָרִים דֶּרֶךְ כְּלָל.
-                </span>-->
             </div>
-            <input type="hidden" name="hebStart" value="0"/>
 
-            <p>English:</p>
-            <div id="engText" class="tanya_textarea">
-                <!--<span style="font-size:15px;">However, the true and direct path to the lower level of teshuvah, returning the latter hey as noted above, involves two general elements.</span>-->
-            </div>
-            <input type="hidden" name="engStart" value="0"/>
+            
             <hr>
 
             <!--<h3>English only section (<input type="checkbox" name="sync" id="sync3" checked> <label for="sync3" style="color:green">Sync</label>) <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button></h3>
@@ -192,8 +181,8 @@
 
                var data= JSON.parse(e);
                var text_both = data.text_both;
-               var text_eng  = data.text_eng;
-               var text_heb = data.text_heb;
+               var text_eng_heb  = data.text_eng_heb;
+               
 
                var htmlTxtBothContent = '';
                var htmlTxtEng = '';
@@ -221,7 +210,7 @@
                        }
                        englishOnlyHeader = '<h3><span>English Only Section</span> (<input type="checkbox" class="sync" name="sync_both['+text_both[tb].id+']" value="'+text_both[tb].id+'" />'+
                            '<label for="sync1">Sync</label>) '+
-                           '<button name="deleteBoth" data-id="'+text_both[tb].id+'" type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button>'+
+                           '<button data-id="'+text_both[tb].id+'" type="button" class="btn btn-danger btn-sm deleteSubSection"><span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem['+text_both[tb].id+']" value="0"/>'+
                            '</h3>';
                        htmlTxtBothContent+= englishOnlyHeader+'<textarea name="englishOnly['+text_both[tb].id+']" class="col-md-12">'+t+'</textarea><br/>';
 
@@ -231,36 +220,27 @@
                }
 
 
-
-               for(te in text_eng){
-                   var t = text_eng[te].text_eng.trim();
-                   if(t){
-                       if(text_eng[te].sync==1){
-
-                       }
+               var hebEngContent = ''; 
+               for(te in text_eng_heb){
+                   var heb = text_eng_heb[te].text_heb.trim();
+                   var eng = text_eng_heb[te].text_eng.trim();
+                   if(heb){
+                      
                        if(startEng==0){
-                           startEng = text_eng[te].id;
+                           startEng = text_eng_heb[te].id;
                        }else{
-                           startEng += "," + text_eng[te].id;
+                           startEng += "," + text_eng_heb[te].id;
                        }
-                       htmlTxtEng += '<p>'+t+'</p>';
+                       hebEngContent += '<h3><span>Hebrew/English Section</span> (<input type="checkbox" class="sync" name="sync_ind"> <label for="sync2">Sync</label>) '+
+                ' <button type="button" class="btn btn-danger btn-sm deleteSubSection" data-id="'+text_eng_heb[te].id+'">'+
+                  '<span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem['+text_eng_heb[te].id+']" value="0"/></h3><p>Hebrew:</p>'+
+                '<textarea name="heb['+text_eng_heb[te].id+']">'+heb+'</textarea><p>English:</p>'+
+                '<textarea name="eng['+text_eng_heb[te].id+']">'+eng+'</textarea>';
+
+                      
                    }
                }
-               for(th in text_heb){
-                   var t = text_heb[th].text_heb.trim();
-                   if(t){
-                       hebTotal++;
-                       if(text_heb[th].sync==1){
-                           hebSyncCount++;
-                       }
-                       if(startHeb==0){
-                           startHeb = text_heb[th].id;
-                       }else{
-                           startHeb += "," + text_heb[th].id;
-                       }
-                       htmlTxtHeb += '<p>'+t+'</p>';
-                   }
-               }
+               
 
                /*if(hebTotal == hebSyncCount){
                    $("#sync1").prop('checked','checked');
@@ -278,7 +258,7 @@
 
 
                $("#englishOnly").html(htmlTxtBothContent);
-
+               $("#hebEng").html(hebEngContent); 
 
 
 
@@ -314,17 +294,17 @@
         if(obj.prop('checked')){
             $(".sync").prop('checked','checked');
             $(".sync").next().addClass('text-success');
-            $("input.sync").each(function(i,el){
+            /*$("input.sync").each(function(i,el){
                 var obj = $(this);
                 if(obj.prop('checked')){
                     sync.push(obj.val());
                 }
-            });
+            });*/
 
         }else{
             $(".sync").removeAttr('checked');
             $(".sync").next().removeClass('text-success');
-            sync = [];
+            //sync = [];
         }
     });
 
@@ -332,25 +312,21 @@
        var obj = $(this);
         if(obj.prop('checked')){
             obj.next().addClass('text-success');
-            sync.push(obj.val())
+            //sync.push(obj.val())
         }else{
-            var index = sync.indexOf(obj.val());
+            /*var index = sync.indexOf(obj.val());
             if(index != -1){
                 sync.splice(index,1);
-            }
+            }*/
             obj.next().removeClass('text-success');
         }
     });
 
-    $("#deleteHebEng").click(function(){
-        var obj = $(this);
 
-        obj.parent().find('span').addClass('strike_through');
-    });
-
-    $(document).on('click','button[name=deleteBoth]',function(){
+    $(document).on('click','button.deleteSubSection',function(){
         var obj = $(this);
-        deleteItemArr.push(obj.attr('data-id'));
+        obj.next().val(obj.attr('data-id'));
+        //deleteItemArr.push(obj.attr('data-id'));
         obj.parent().find('span').addClass('strike_through');
     });
 
@@ -368,7 +344,7 @@
         };
 
         console.log(formData)
-        return false;
+        //return false;
     });
 
 

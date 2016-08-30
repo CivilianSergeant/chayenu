@@ -118,22 +118,16 @@ class ParshaController extends Controller
                 ->where('last_action','!=','delete')
                 ->orderBy('order','asc')
                 ->get();
-        $textEngs = Text::select('id','text_eng','sync','last_action','order')->where('section_id',$sectionId)
+        $textEngHebs = Text::select('id','text_eng','text_heb','sync','last_action','order')->where('section_id',$sectionId)
             ->where('day_num',$dayNum)
             ->where('text_both','=','')
             ->where('last_action','!=','delete')
             ->orderBy('order','asc')
             ->get();
-        $textHebs = Text::select('id','text_heb','sync','last_action','order')->where('section_id',$sectionId)
-            ->where('day_num',$dayNum)
-            ->where('text_both','=','')
-            ->where('last_action','!=','delete')
-            ->orderBy('order','asc')
-            ->get();
+        
         $data = array(
             'text_both' => $texts,
-            'text_eng' => $textEngs,
-            'text_heb' => $textHebs
+            'text_eng_heb' => $textEngHebs
         );
         return json_encode($data);
     }

@@ -19,7 +19,8 @@ class TextController extends Controller{
         $all = $request->all();
 
         dd($all);
-        $section = $all['section'];
+        
+        /*$section = $all['section'];
         $day_num = $all['day_num'];
         $englishOnlyStart = $all['englishOnlyStart'];
         $hebStart = $all['hebStart'];
@@ -42,7 +43,7 @@ class TextController extends Controller{
             $texts = Text::where('section_id',$all['section'])
                 ->where('day_num',$all['day_num'])
                 ->whereIn('id',explode(",",$engStart))->update(['sync'=>1]);
-        }
+        }*/
 
         return redirect('text/'.$parsha_id)->with('success','Information Updated');
 
