@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98603819-6360-41a4-ac2d-0ef9fbcb3477" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Text.php" afterPath="$PROJECT_DIR$/app/Entities/Text.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TextController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TextController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -30,7 +31,7 @@
       <file leaf-file-name="list.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/section/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="-7.806452" vertical-offset="132" max-vertical-offset="2068">
+            <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
               <folding />
             </state>
           </provider>
@@ -39,7 +40,7 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/parsha/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="326" column="22" selection-start="11649" selection-end="11649" vertical-scroll-proportion="0.8168498" vertical-offset="6726" max-vertical-offset="8426">
+            <state line="224" column="312" selection-start="8039" selection-end="8039" vertical-scroll-proportion="0.619403" vertical-offset="4596" max-vertical-offset="7722">
               <folding />
             </state>
           </provider>
@@ -48,7 +49,7 @@
       <file leaf-file-name="Text.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Entities/Text.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="440">
+            <state line="14" column="49" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="462">
               <folding />
             </state>
           </provider>
@@ -57,7 +58,7 @@
       <file leaf-file-name="SectionController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SectionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="25" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="2420">
+            <state line="32" column="25" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="2420">
               <folding />
             </state>
           </provider>
@@ -93,7 +94,7 @@
       <file leaf-file-name="TextController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TextController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="17" selection-start="307" selection-end="316" vertical-scroll-proportion="6.806452" vertical-offset="651" max-vertical-offset="1210">
+            <state line="20" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="3322">
               <folding />
             </state>
           </provider>
@@ -139,9 +140,9 @@
         <option value="$PROJECT_DIR$/resources/views/section/list.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/section/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" />
-        <option value="$PROJECT_DIR$/app/Entities/Text.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ParshaController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Entities/Text.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TextController.php" />
         <option value="$PROJECT_DIR$/resources/views/parsha/detail.blade.php" />
       </list>
@@ -149,10 +150,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1374" />
-    <option name="height" value="732" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1278" />
+    <option name="height" value="722" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -545,7 +546,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="732" extended-state="0" />
+    <frame x="1" y="1" width="1278" height="722" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -553,7 +554,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26850393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -592,9 +593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Entities/Parsha.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352">
-          <folding />
-        </state>
+        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
@@ -634,9 +633,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="31" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="726">
-          <folding />
-        </state>
+        <state line="25" column="31" selection-start="584" selection-end="584" vertical-scroll-proportion="0.0" vertical-offset="550" max-vertical-offset="726" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/parsha/index.blade.php">
@@ -686,9 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="484" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/session.php">
@@ -797,9 +792,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Entities/Parsha.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352">
-          <folding />
-        </state>
+        <state line="9" column="37" selection-start="159" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="352" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SectionController.php">
@@ -830,42 +823,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/section/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="-7.806452" vertical-offset="132" max-vertical-offset="2068">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/Text.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="440">
+        <state line="17" column="10" selection-start="347" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="2068">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParshaController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="37" selection-start="3966" selection-end="3966" vertical-scroll-proportion="-11.935484" vertical-offset="2314" max-vertical-offset="3190">
-          <folding />
-        </state>
+        <state line="122" column="37" selection-start="3966" selection-end="3966" vertical-scroll-proportion="-11.935484" vertical-offset="2314" max-vertical-offset="3190" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="996" column="0" selection-start="15304" selection-end="15304" vertical-scroll-proportion="0.3322034" vertical-offset="21716" max-vertical-offset="83886">
+        <state line="996" column="0" selection-start="15304" selection-end="15304" vertical-scroll-proportion="0.3322034" vertical-offset="21716" max-vertical-offset="83886" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="49" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TextController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="17" selection-start="307" selection-end="316" vertical-scroll-proportion="6.806452" vertical-offset="651" max-vertical-offset="1210">
+        <state line="20" column="0" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="3322">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/parsha/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="22" selection-start="11649" selection-end="11649" vertical-scroll-proportion="0.8168498" vertical-offset="6726" max-vertical-offset="8426">
+        <state line="224" column="312" selection-start="8039" selection-end="8039" vertical-scroll-proportion="0.619403" vertical-offset="4596" max-vertical-offset="7722">
           <folding />
         </state>
       </provider>
