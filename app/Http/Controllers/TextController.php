@@ -11,15 +11,15 @@ namespace App\Http\Controllers;
 
 use App\Entities\Text;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+
+
 class TextController extends Controller{
 
     public function save(Request $request)
     {
         $all = $request->all();
 
-
-        
         $section = $all['section'];
         $day_num = $all['day_num'];
         $parsha_id = $all['parsha_id'];
@@ -48,7 +48,7 @@ class TextController extends Controller{
                         if($deletedItem[$id]!=0)
                             $text->last_action="delete";
                         else
-                            $text->last_action="update";
+                            $text->last_action="insert";
                     }
 
                     if(!empty($sync) && !empty($sync[$id])){
@@ -74,7 +74,7 @@ class TextController extends Controller{
                         if($deletedItem[$id]!=0)
                             $text->last_action="delete";
                         else
-                            $text->last_action="update";
+                            $text->last_action="insert";
                     }
 
                     if(!empty($sync) && !empty($sync[$id])){
@@ -95,6 +95,7 @@ class TextController extends Controller{
             foreach($englishOnlyNew as $i => $engOnlyNew){
                 $order++;
                 $text = new Text();
+                $text->parsha_id = $parsha_id;
                 $text->section_id = $section;
                 $text->day_num = $day_num;
                 $text->order = $order;
@@ -126,7 +127,7 @@ class TextController extends Controller{
                         if($deletedItem_new[$id]!=0)
                             $text->last_action="delete";
                         else
-                            $text->last_action="update";
+                            $text->last_action="insert";
                     }
 
                     if(!empty($sync_new) && !empty($sync_new[$id])){

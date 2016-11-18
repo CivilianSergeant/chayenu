@@ -97,15 +97,15 @@ class ParshaController extends Controller
     public function getDays(Request $request)
     {
         $sectionId = $request->get('section_id');
-        $dayNumbers = Text::select('day_num')->distinct()->where('section_id',$sectionId)->get();
-        $days = ['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
-        $newDays = array();
+        //$dayNumbers = Text::select('day_num')->distinct()->where('section_id',$sectionId)->get();
+        $days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        /*$newDays = array();
         foreach($dayNumbers as $i=> $dn){
 
             $newDays[$dn->day_num] = $days[$i]." (".$dn->day_num.")";
-        }
+        }*/
 
-        return json_encode(array('days'=>$newDays));
+        return json_encode(array('days'=>$days));
     }
 
     public function getTexts(Request $request)
@@ -113,12 +113,12 @@ class ParshaController extends Controller
         $sectionId = $request->get('section_id');
         $dayNum = $request->get('day_num');
 
-        $texts = Text::select('id','text_both','sync','last_action','order')->where('section_id',$sectionId)
+        $texts = Text::with('TextChilds')->select('id','text_both','sync','last_action','order','child_id')->where('section_id',$sectionId)
                 ->where('day_num',$dayNum)
                 ->where('last_action','!=','delete')
                 ->orderBy('order','asc')
                 ->get();
-        $textEngHebs = Text::select('id','text_eng','text_heb','sync','last_action','order')->where('section_id',$sectionId)
+        $textEngHebs = Text::with('TextChilds')->select('id','text_eng','text_heb','sync','last_action','order','child_id')->where('section_id',$sectionId)
             ->where('day_num',$dayNum)
             ->where('text_both','=','')
             ->where('last_action','!=','delete')

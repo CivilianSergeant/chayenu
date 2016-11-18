@@ -13,4 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 class Text extends Model{
     protected $table="text";
     protected $fillable=['section_id','parsha_id','day_num','order','text_eng','text_heb','text_both','sync','last_action'];
-} 
+
+    public function TextChilds()
+    {
+        return $this->hasMany('App\Entities\TextChild','parent_id','id');
+    }
+}

@@ -63,8 +63,12 @@
             <div id="hebEng">
 
             </div>
+            <div id="hebNewSubSection">
 
-            
+            </div>
+            <div id="newSubSection">
+
+            </div>
             <hr>
 
             <!--<h3>English only section (<input type="checkbox" name="sync" id="sync3" checked> <label for="sync3" style="color:green">Sync</label>) <button class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span> Delete</button></h3>
@@ -74,12 +78,8 @@
             </div>
 
             <br><br>-->
-            <div id="newSubSection">
 
-            </div>
-            <div id="hebNewSubSection">
 
-            </div>
 
             <button id="addHebBtn" class="btn btn-default btn-lg" type="button"><span class="glyphicon glyphicon-plus"></span> Add Hebrew/English Section</button>
 
@@ -90,7 +90,7 @@
             <br><br>
 
 
-            <button class="btn btn-primary btn-lg center-block" type="submit"><span class="glyphicon glyphicon-ok"></span> Save & Preview Tanya</button>
+            <button class="btn btn-primary btn-lg center-block" type="submit"><span class="glyphicon glyphicon-ok"></span> Save </button>
             </div>
         </form>
     </div>
@@ -102,13 +102,13 @@
 
 
 
-    tinymce.init({
+    /*tinymce.init({
         mode:"none",
         menubar: false,
 
         plugins: "code",
 
-        toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+        toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
 
         selector:'#hebText'
 
@@ -120,11 +120,11 @@
 
         plugins: "code",
 
-        toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+        toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
 
         selector:'#engText'
 
-    });
+    });*/
 
 
 
@@ -148,7 +148,7 @@
 
                 var optionHtml ='<option value="">Please Select</option>';
                 for(d in days){
-                    optionHtml += '<option value="'+d+'">'+days[d]+'</option>';
+                    optionHtml += '<option value="'+(parseInt(d)+1)+'">'+days[d]+'</option>';
 
                 }
 
@@ -193,7 +193,7 @@
                var data= JSON.parse(e);
                var text_both = data.text_both;
                var text_eng_heb  = data.text_eng_heb;
-               
+
 
                var htmlTxtBothContent = '';
                var htmlTxtEng = '';
@@ -205,11 +205,25 @@
 
                    var t = text_both[tb].text_both.trim();
                    if(t != ""){
-                       englishOnlyHeader = '<h3><span>English Only Section</span> (<input type="checkbox" class="sync" '+((text_both[tb].sync)? 'checked="checked"':'')+' name="sync['+text_both[tb].id+']" value="'+text_both[tb].id+'" />'+
+                       englishOnlyHeader = '<h2><span>English Only Section</span> (<input type="checkbox" class="sync" '+((text_both[tb].sync)? 'checked="checked"':'')+' name="sync['+text_both[tb].id+']" value="'+text_both[tb].id+'" />'+
                            '<label for="sync1" '+((text_both[tb].sync)?'class="text-success"':'')+'>Sync</label>) '+
                            '<button data-id="'+text_both[tb].id+'" type="button" class="btn btn-danger btn-sm deleteSubSection"><span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem['+text_both[tb].id+']" value="0"/>'+
+                           '</h2>';
+                       htmlTxtBothContent+= englishOnlyHeader+'<textarea style="font-size:18px;" name="englishOnly['+text_both[tb].id+']" class="col-md-12">'+t+'</textarea><br/>';
+                   }
+                   // console.log(text_both[tb].text_childs.length,text_both[tb].text_childs);
+                   if(t != "" && text_both[tb].text_childs.length>0){
+                       htmlTxtBothContent += '<div style="margin-left:50px;margin-top:25px;margin-bottom:25px;">';
+                       for(tbc in text_both[tb].text_childs){
+                           var childEngOnly = text_both[tb].text_childs[tbc];
+                       englishOnlyHeader = '<h3><span>Child English Only Section</span> (<input type="checkbox" class="sync" '+((childEngOnly.sync)? 'checked="checked"':'')+' name="child_sync['+childEngOnly.id+']" value="'+childEngOnly.id+'" />'+
+                           '<label for="sync1" '+((childEngOnly.sync)?'class="text-success"':'')+'>Sync</label>) '+
+                           '<button data-id="'+childEngOnly.id+'" type="button" class="btn btn-danger btn-sm deleteSubSection"><span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedChildItem['+childEngOnly.id+']" value="0"/>'+
                            '</h3>';
-                       htmlTxtBothContent+= englishOnlyHeader+'<textarea name="englishOnly['+text_both[tb].id+']" class="col-md-12">'+t+'</textarea><br/>';
+
+                           htmlTxtBothContent+= englishOnlyHeader+'<textarea style="font-size:18px;" name="childEnglishOnly['+childEngOnly.id+']" class="col-md-12">'+t+'</textarea><br/>';
+                       }
+                       htmlTxtBothContent += '</div>';
                    }
 
                }
@@ -223,12 +237,27 @@
                       
 
                        hebEngContent += '<h3><span>Hebrew/English Section</span> (<input type="checkbox" '+((text_eng_heb[te].sync)? 'checked="checked"' : '')+' class="sync" name="sync['+text_eng_heb[te].id+']" value="'+text_eng_heb[te].id+'"/> <label for="sync2" '+((text_eng_heb[te].sync)? 'class="text-success"' : '')+'>Sync</label>) '+
-                ' <button type="button" class="btn btn-danger btn-sm deleteSubSection" data-id="'+text_eng_heb[te].id+'">'+
-                  '<span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem['+text_eng_heb[te].id+']" value="0"/></h3><p>Hebrew:</p>'+
-                '<textarea name="heb['+text_eng_heb[te].id+']">'+heb+'</textarea><p>English:</p>'+
-                '<textarea name="eng['+text_eng_heb[te].id+']">'+eng+'</textarea>';
+                        ' <button type="button" class="btn btn-danger btn-sm deleteSubSection" data-id="'+text_eng_heb[te].id+'">'+
+                          '<span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem['+text_eng_heb[te].id+']" value="0"/></h3><p>Hebrew:</p>'+
+                        '<textarea class="hebEditor" style="direction: rtl;" name="heb['+text_eng_heb[te].id+']">'+heb+'</textarea><p>English:</p>'+
+                        '<textarea class="engEditor" style="font-size:18px;" name="eng['+text_eng_heb[te].id+']">'+eng+'</textarea>';
 
-                      
+                        var childTexts = text_eng_heb[te].text_childs;
+
+                       if(childTexts.length>0){
+                           hebEngContent += '<div style="margin-left:50px;margin-top:25px;margin-bottom:25px;">';
+                           for(ct in childTexts){
+                               var childText = childTexts[ct];
+                               var heb = childText.text_heb.trim();
+                               var eng = childText.text_eng.trim();
+                               hebEngContent += '<h3><span>Child Hebrew/English Section</span> (<input type="checkbox" '+((childText.sync)? 'checked="checked"' : '')+' class="sync" name="sync['+childText.id+']" value="'+childText.id+'"/> <label for="sync2" '+((childText.sync)? 'class="text-success"' : '')+'>Sync</label>) '+
+                                   ' <button type="button" class="btn btn-danger btn-sm deleteSubSection" data-id="'+childText.id+'">'+
+                                   '<span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedChildItem['+childText.id+']" value="0"/></h3><p>Child Hebrew:</p>'+
+                                   '<textarea class="hebEditor" style="direction: rtl;" name="heb['+childText.id+']">'+heb+'</textarea><p>Child English:</p>'+
+                                   '<textarea class="engEditor" style="font-size:18px;" name="eng['+childText.id+']">'+eng+'</textarea>';
+                           }
+                           hebEngContent += '</div>';
+                       }
                    }
                }
                
@@ -242,9 +271,22 @@
 
                    plugins: "code",
 
-                   toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+                   toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
 
-                   selector:'textarea'
+                   selector:'.hebEditor',
+                   content_css: "{{asset('css/heb-custom.css')}}"
+
+               });
+               tinymce.init({
+                   mode:"none",
+                   menubar: false,
+
+                   plugins: "code",
+
+                   toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+
+                   selector:'.engEditor',
+                   content_css: "{{asset('css/custom.css')}}"
 
                });
                $("#loader").addClass('hidden');
@@ -295,16 +337,17 @@
             '<button data-id="'+newItemCount+'" type="button" class="btn btn-danger btn-sm deleteSubSection"><span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem_new['+newItemCount+']" value="0"/>'+
             '</h3><textarea name="englishOnlyNew['+newItemCount+']" class="col-md-12"></textarea><br/>';
 
-        $("#newSubSection").append(englishOnlyHeader);
+        $("#hebNewSubSection").append(englishOnlyHeader);
         tinymce.init({
             mode:"none",
             menubar: false,
 
             plugins: "code",
 
-            toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+            toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
 
-            selector:'textarea'
+            selector:'textarea',
+            content_css: "{{asset('css/custom.css')}}"
 
         });
         newItemCount++;
@@ -314,8 +357,8 @@
         var hebEngContent = '<h3><span>Hebrew/English Section</span> (<input type="checkbox" class="sync" name="sync_new['+newItemCount+']" value="'+newItemCount+'"/> <label for="sync2">Sync</label>) '+
             ' <button type="button" class="btn btn-danger btn-sm deleteSubSection" data-id="'+newItemCount+'">'+
             '<span class="glyphicon glyphicon-trash"></span> Delete</button><input type="hidden" name="deletedItem_new['+newItemCount+']" value="0"/></h3><p>Hebrew:</p>'+
-            '<textarea name="heb_new['+newItemCount+']"></textarea><p>English:</p>'+
-            '<textarea name="eng_new['+newItemCount+']"></textarea><br/>';
+            '<textarea class="hebEditor" name="heb_new['+newItemCount+']"></textarea><p>English:</p>'+
+            '<textarea class="engEditor" name="eng_new['+newItemCount+']"></textarea><br/>';
 
         $("#hebNewSubSection").append(hebEngContent);
 
@@ -325,10 +368,21 @@
 
             plugins: "code",
 
-            toolbar: 'formatselect, fontselect, fontsizeselect, styleselect | cut, copy, paste, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, superscript | bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+            toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
 
-            selector:'textarea'
+            selector:'.hebEditor',
+            content_css: "{{asset('css/heb-custom.css')}}"
+        });
+        tinymce.init({
+            mode:"none",
+            menubar: false,
 
+            plugins: "code",
+
+            toolbar: 'bold, italic, underline strikethrough, alignleft, aligncenter, alignright, alignjustify, code',
+
+            selector:'.engEditor',
+            content_css: "{{asset('css/custom.css')}}"
         });
         newItemCount++;
     });
